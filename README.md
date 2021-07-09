@@ -22,7 +22,7 @@ In practice, we choose 2 values for momentum. As in One Cycle, we do 2 step cycl
 
 Does it provide us higher accuracy in practice? The answer, sadly, is NO.
 
-## Objective
+## Objectives
 
 * [ ] To write a custom ResNet architecture for CIFAR10 that has the following architecture:
   * [ ] PrepLayer - Conv 3x3 s1, p1) >> BN >> RELU [64k]
@@ -60,8 +60,8 @@ Does it provide us higher accuracy in practice? The answer, sadly, is NO.
   
 ## Code Structure
 
-* [resnet.py](https://github.com/Arijit-datascience/pytorch_cifar10/blob/main/model/resnet.py): This describes the ResNet-18 architecture with Layer Normalization  
-<i>Referrence: https://github.com/kuangliu/pytorch-cifar/blob/master/models/resnet.py</i>  
+* [custom_resnet.py](https://github.com/Arijit-datascience/pytorch_cifar10/blob/main/model/resnet.py): Our version of a custom Resnet Architecture.
+
 
 * [utils](https://github.com/Arijit-datascience/pytorch_cifar10/blob/main/utils/utils.py): Utils code contains the following components:-  
   1. Data Loaders  
@@ -75,7 +75,7 @@ Does it provide us higher accuracy in practice? The answer, sadly, is NO.
   2. Test code
   3. Main function for training and testing the model  
 
-* [Colab file](/pytorch_cifar10_resnet.ipynb): The Google Colab file contains the following steps:-  
+* [Colab file](/pytroch_custom_resnet.ipynb): This Google Colab file contains rundown of the execution of our code. Check it out for more information. 
  
 
 ## Model Summary
