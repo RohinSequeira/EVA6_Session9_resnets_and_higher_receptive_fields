@@ -60,7 +60,7 @@ Does it provide us higher accuracy in practice? The answer, sadly, is NO.
   
 ## Code Structure
 
-* [custom_resnet.py](https://github.com/Arijit-datascience/pytorch_cifar10/blob/main/model/resnet.py): Our version of a custom Resnet Architecture.
+* [custom_resnet.py](https://github.com/Arijit-datascience/pytorch_cifar10/blob/main/model/custom_resnet.py): Our version of a custom Resnet Architecture.
 
 
 * [utils](https://github.com/Arijit-datascience/pytorch_cifar10/blob/main/utils/utils.py): Utils code contains the following components:-  
