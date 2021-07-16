@@ -53,14 +53,14 @@ Does it provide us higher accuracy in practice? The answer, sadly, is NO.
   * [ ] FlipLR 
   * [ ] CutOut(8, 8)
 * [ ] Batch size = 512
-* [ ] Target Accuracy: 90%
+* [ ] Target Accuracy: 93%
 
 ## Results
 
   
 ## Code Structure
 
-* [custom_resnet.py](https://github.com/Arijit-datascience/pytorch_cifar10/blob/main/model/custom_resnet.py): Our version of a custom Resnet Architecture.
+* [custom_resnet.py](https://github.com/RohinSequeira/pytorch_cifar10/blob/main/model/custom_resnet.py): Our version of a custom Resnet Architecture.
 
 
 * [utils](https://github.com/Arijit-datascience/pytorch_cifar10/blob/main/utils/utils.py): Utils code contains the following components:-  
@@ -80,16 +80,17 @@ Does it provide us higher accuracy in practice? The answer, sadly, is NO.
 
 ## Model Summary
 
+![model_summary](/images_and_logs/model_summary.JPG)
 
 ## Plots
 
   1. Train & Test Loss, Train & Test Accuracy  
   
+  ![loss_and_accuracy](/images_and_logs/loss_and_accuracy_graphs.png)
 
   2. Misclassified Images  
   
-
-  3. Gradcam Images  
+  ![loss_and_accuracy](/images_and_logs/misclassified_images.png)
   
 
 ## Collaborators
