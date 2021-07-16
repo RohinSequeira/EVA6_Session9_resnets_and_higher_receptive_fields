@@ -24,36 +24,36 @@ Does it provide us higher accuracy in practice? The answer, sadly, is NO.
 
 ## Objectives
 
-* [ ] To write a custom ResNet architecture for CIFAR10 that has the following architecture:
-  * [ ] PrepLayer - Conv 3x3 s1, p1) >> BN >> RELU [64k]
-  * [ ] Layer1 -
-    * [ ] X = Conv 3x3 (s1, p1) >> MaxPool2D >> BN >> RELU [128k]
-    * [ ] R1 = ResBlock( (Conv-BN-ReLU-Conv-BN-ReLU))(X) [128k] 
-    * [ ] Add(X, R1)
-  * [ ] Layer 2 -
-    * [ ] Conv 3x3 [256k]
-    * [ ] MaxPooling2D
-    * [ ] BN
-    * [ ] ReLU
-  * [ ] Layer 3 -
-    * [ ] X = Conv 3x3 (s1, p1) >> MaxPool2D >> BN >> RELU [512k]
-    * [ ] R2 = ResBlock( (Conv-BN-ReLU-Conv-BN-ReLU))(X) [512k]
-    * [ ] Add(X, R2)
-  * [ ] MaxPooling with Kernel Size 4
-  * [ ] FC Layer 
-  * [ ] SoftMax
-* [ ] Uses One Cycle Policy such that:
-  * [ ] Total Epochs = 24
-  * [ ] Max at Epoch = 5
-  * [ ] LRMIN = _To be calculated_
-  * [ ] LRMAX = _To be calculated_
-  * [ ] NO Annihilation
-* [ ] Uses the following transforms, in order: 
-  * [ ] RandomCrop 32, 32 (after padding of 4) 
-  * [ ] FlipLR 
-  * [ ] CutOut(8, 8)
-* [ ] Batch size = 512
-* [ ] Target Accuracy: 93%
+* [x] To write a custom ResNet architecture for CIFAR10 that has the following architecture:
+  * [x] PrepLayer - Conv 3x3 s1, p1) >> BN >> RELU [64k]
+  * [x] Layer1 -
+    * [x] X = Conv 3x3 (s1, p1) >> MaxPool2D >> BN >> RELU [128k]
+    * [x] R1 = ResBlock( (Conv-BN-ReLU-Conv-BN-ReLU))(X) [128k] 
+    * [x] Add(X, R1)
+  * [x] Layer 2 -
+    * [x] Conv 3x3 [256k]
+    * [x] MaxPooling2D
+    * [x] BN
+    * [x] ReLU
+  * [x] Layer 3 -
+    * [x] X = Conv 3x3 (s1, p1) >> MaxPool2D >> BN >> RELU [512k]
+    * [x] R2 = ResBlock( (Conv-BN-ReLU-Conv-BN-ReLU))(X) [512k]
+    * [x] Add(X, R2)
+  * [x] MaxPooling with Kernel Size 4
+  * [x] FC Layer 
+  * [x] SoftMax
+* [x] Uses One Cycle Policy such that:
+  * [x] Total Epochs = 24
+  * [x] Max at Epoch = 5
+  * [x] LRMIN = _0_
+  * [x] LRMAX = _0.05501043841336117_
+  * [x] NO Annihilation
+* [x] Uses the following transforms, in order: 
+  * [x] RandomCrop 32, 32 (after padding of 4) 
+  * [x] FlipLR 
+  * [x] CutOut(8, 8)
+* [x] Batch size = 512
+* [ ] Target Accuracy: 93% _(Achieved 92.09%)_
 
 ## Results
 
@@ -100,13 +100,146 @@ Does it provide us higher accuracy in practice? The answer, sadly, is NO.
 
 ![model_summary](/images_and_logs/model_summary.JPG)
 
+## Train and Test Logs
+
+```------------------------------------------
+
+Epoch 1 : 
+Train set: Average loss: 1.3702, Accuracy: 32.88
+
+Test set: Average loss: 0.003, Accuracy: 45.80
+
+Epoch 2 : 
+Train set: Average loss: 1.2244, Accuracy: 52.07
+
+Test set: Average loss: 0.002, Accuracy: 60.82
+
+Epoch 3 : 
+Train set: Average loss: 1.0451, Accuracy: 61.94
+
+Test set: Average loss: 0.002, Accuracy: 69.26
+
+Epoch 4 : 
+Train set: Average loss: 0.8514, Accuracy: 70.11
+
+Test set: Average loss: 0.002, Accuracy: 72.19
+
+Epoch 5 : 
+Train set: Average loss: 0.6583, Accuracy: 75.31
+
+Test set: Average loss: 0.002, Accuracy: 67.19
+
+Epoch 6 : 
+Train set: Average loss: 0.4510, Accuracy: 78.86
+
+Test set: Average loss: 0.002, Accuracy: 72.43
+
+Epoch 7 : 
+Train set: Average loss: 0.4529, Accuracy: 81.01
+
+Test set: Average loss: 0.001, Accuracy: 78.88
+
+Epoch 8 : 
+Train set: Average loss: 0.5118, Accuracy: 83.11
+
+Test set: Average loss: 0.001, Accuracy: 78.03
+
+Epoch 9 : 
+Train set: Average loss: 0.4669, Accuracy: 84.90
+
+Test set: Average loss: 0.001, Accuracy: 81.38
+
+Epoch 10 : 
+Train set: Average loss: 0.4460, Accuracy: 86.06
+
+Test set: Average loss: 0.001, Accuracy: 81.36
+
+Epoch 11 : 
+Train set: Average loss: 0.4558, Accuracy: 87.04
+
+Test set: Average loss: 0.001, Accuracy: 81.88
+
+Epoch 12 : 
+Train set: Average loss: 0.3746, Accuracy: 87.90
+
+Test set: Average loss: 0.001, Accuracy: 82.37
+
+Epoch 13 : 
+Train set: Average loss: 0.3672, Accuracy: 88.37
+
+Test set: Average loss: 0.001, Accuracy: 82.19
+
+Epoch 14 : 
+Train set: Average loss: 0.3021, Accuracy: 88.95
+
+Test set: Average loss: 0.001, Accuracy: 86.21
+
+Epoch 15 : 
+Train set: Average loss: 0.3010, Accuracy: 89.92
+
+Test set: Average loss: 0.001, Accuracy: 84.96
+
+Epoch 16 : 
+Train set: Average loss: 0.2863, Accuracy: 90.75
+
+Test set: Average loss: 0.001, Accuracy: 83.70
+
+Epoch 17 : 
+Train set: Average loss: 0.2100, Accuracy: 91.34
+
+Test set: Average loss: 0.001, Accuracy: 85.48
+
+Epoch 18 : 
+Train set: Average loss: 0.2264, Accuracy: 92.79
+
+Test set: Average loss: 0.001, Accuracy: 85.13
+
+Epoch 19 : 
+Train set: Average loss: 0.1590, Accuracy: 94.05
+
+Test set: Average loss: 0.001, Accuracy: 89.68
+
+Epoch 20 : 
+Train set: Average loss: 0.1448, Accuracy: 95.31
+
+Test set: Average loss: 0.001, Accuracy: 89.41
+
+Epoch 21 : 
+Train set: Average loss: 0.1201, Accuracy: 96.59
+
+Test set: Average loss: 0.001, Accuracy: 90.90
+
+Epoch 22 : 
+Train set: Average loss: 0.0752, Accuracy: 97.69
+
+Test set: Average loss: 0.000, Accuracy: 91.91
+
+Epoch 23 : 
+Train set: Average loss: 0.0556, Accuracy: 98.30
+
+Test set: Average loss: 0.000, Accuracy: 92.01
+
+Epoch 24 : 
+Train set: Average loss: 0.0630, Accuracy: 98.48
+
+Test set: Average loss: 0.000, Accuracy: 92.09
+```
+
 ## Plots
 
-  1. Train & Test Loss, Train & Test Accuracy  
+  1. Sample Transformed Input Images
+
+  ![sample_input_images](/images_and_logs/sample_transformed_input_images.png)
+
+  2. Max LR plot
+  
+  ![max_lr](/images_and_logs/max_lr_graph.png)
+
+  3. Train & Test Loss, Train & Test Accuracy  
   
   ![loss_and_accuracy](/images_and_logs/loss_and_accuracy_graphs.png)
 
-  2. Misclassified Images  
+  4. Misclassified Images  
   
   ![loss_and_accuracy](/images_and_logs/misclassified_images.png)
   
