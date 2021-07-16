@@ -93,7 +93,7 @@ Does it provide us higher accuracy in practice? The answer, sadly, is NO.
   2. Test code
   3. Main function for training and testing the model  
 
-* [Colab file](/pytroch_custom_resnet.ipynb): This Google Colab file contains rundown of the execution of our code. Check it out for more information. 
+* [Colab file](/pytorch_custom_resnet.ipynb): This Google Colab file contains rundown of the execution of our code. Check it out for more information. 
  
 
 ## Model Summary
