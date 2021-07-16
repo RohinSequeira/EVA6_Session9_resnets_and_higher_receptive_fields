@@ -57,20 +57,38 @@ Does it provide us higher accuracy in practice? The answer, sadly, is NO.
 
 ## Results
 
+1. Model: Custom ResNet18
+  2. Total Train data: 60,000 | Total Test Data: 10,000
+  3. Total Parameters: 6,573,130
+  4. Test Accuracy: 92.09%
+  5. Epochs: Run till 24 epochs
+  6. Normalization: Batch Normalization
+  7. Regularization: L2 with factor 0.002
+  8. Optimizer: SGD
+  9. Loss criterion: Cross Entropy
+  10. Scheduler: OneCycleLR
+  11. Albumentations: 
+      1. RandomCrop(32, padding=4)
+      2. HorizontalFlip
+      3. CoarseDropout(8x8)
+      6. Normalization 
+   12. Misclassified Images: 791 images were misclassified out of 10,000
   
 ## Code Structure
 
 * [custom_resnet.py](https://github.com/RohinSequeira/pytorch_cifar10/blob/main/model/custom_resnet.py): Our version of a custom Resnet Architecture.
 
 
-* [utils](https://github.com/Arijit-datascience/pytorch_cifar10/blob/main/utils/utils.py): Utils code contains the following components:-  
+* [utils](https://github.com/RohinSequeira/pytorch_cifar10/blob/main/utils/utils.py): Utils code contains the following components:-  
   1. Data Loaders  
   2. Albumentations  
   3. Accuracy Plots
   4. Misclassification Image Plots
   5. Seed
 
-* [main.py](https://github.com/Arijit-datascience/pytorch_cifar10/blob/main/main.py): Main code contains the following functions:-  
+* [lr_finder](https://github.com/RohinSequeira/pytorch_cifar10/blob/main/utils/lr_finder.py): Return the best max_lr for OneCycleLR.
+
+* [main.py](https://github.com/RohinSequeira/pytorch_cifar10/blob/main/main.py): Main code contains the following functions:-  
   1. Train code
   2. Test code
   3. Main function for training and testing the model  
