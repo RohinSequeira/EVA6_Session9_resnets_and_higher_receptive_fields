@@ -12,7 +12,7 @@ The motivation behind this is that, during the middle of learning when the learn
 
 ![image1](/images_and_logs/one_cycle_lr_image1.png)
 
-As in the figure, We start at a learning rate 0.08 and make a step of 41 epochs to reach a learning rate of 0.8, then make another step of 41 epochs where we go back to a learning rate 0.08. Then we make another 13 epochs to reach 1/10th of lower learning rate bound(0.08).With CLR 0.08–0.8, batch size 512, momentum 0.9 and Resnet-56, we got ~91.30% accuracy in 95 epochs on CIFAR-10.
+As in the figure, the author starts at a learning rate 0.08 and make a step of 41 epochs to reach a learning rate of 0.8, then make another step of 41 epochs where he goes back to a learning rate 0.08. Then makes another 13 epochs to reach 1/10th of lower learning rate bound(0.08).With CLR 0.08–0.8, batch size 512, momentum 0.9 and Resnet-56, got ~91.30% accuracy in 95 epochs on CIFAR-10.
 
 Momentum and learning rate are closely related. It can be seen in the weight update equation for SGD that the momentum has a similar impact as the learning rate on weight updates. The author found in their experiments that reducing the momentum when the learning rate is increasing gives better results. This supports the intuition that in that part of the training, we want the SGD to quickly go in new directions to find a better minima, so the new gradients need to be given more weight.
 
